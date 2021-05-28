@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="./script.js"></script>
+
+    <title>One click ecommerce</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cart__top p-4">
+        <i class="fa fa-arrow-left" aria-hidden="true">
+          <span>Cart</span>
+        </i>
+      </div>
+
+      <div class="cart__heading p-2">
+        <h3>Billing Address</h3>
+      </div>
+      <hr />
+
+      <div class="row g-5">
+        <div class="col-md-7 col-lg-8">
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-6">
+                <label for="firstName" class="form-label billing_details"
+                  >First name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Enter first name"
+                  value=""
+                  required
+                />
+              </div>
+
+              <div class="col-6">
+                <label for="lastName" class="form-label billing_details"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Enter last name"
+                  value=""
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="email_address" class="form-label billing_details"
+                  >Email Address</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email_address"
+                  placeholder="Enter your email address"
+                  value=""
+                  required
+                />
+              </div>
+
+              <div class="col-6">
+                <label for="phone_number" class="form-label billing_details"
+                  >Phone number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone_number"
+                  placeholder="Enter your Phone number"
+                  value=""
+                  required
+                />
+              </div>
+
+              <div class="col-12">
+                <label for="shipping_address" class="form-label billing_details"
+                  >Shipping Address*</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="shipping_address"
+                  placeholder="ABC#123"
+                />
+              </div>
+
+              <div class="col-6">
+                <label for="country" class="form-label billing_details"
+                  >Country</label
+                >
+                <select class="form-select" id="country" required>
+                  <option value="">Select your country</option>
+                  <option>California</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="city" class="form-label billing_details"
+                  >City*</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  placeholder="Enter your City"
+                />
+              </div>
+
+              <div class="col-6">
+                <label for="state" class="form-label billing_details"
+                  >State*</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="state"
+                  placeholder="Enter you state"
+                  required
+                />
+              </div>
+              <div class="col-sm-6">
+                <label for="zip_code" class="form-label billing_details"
+                  >Postal/Zip Code*</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="state"
+                  placeholder="00000"
+                  required
+                />
+              </div>
+            </div>
+            <button class="billing_btn mt-5">Cancel</button>
+
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="billing_btn-main ml-5"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Proccessed payout
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                      Order summary
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="modal__product_details">
+                      <div
+                        class="
+                          modal___product__order
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <h4 class="billing__main__heading pb-3">Product</h4>
+                        <h4 class="billing__main__heading pb-3">Total</h4>
+                      </div>
+                      <div
+                        class="
+                          modal___product__order
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <h6 class="billing__sec__heading pb-3">Bag</h6>
+                        <h6 class="billing__sec__heading pb-3">$88.9</h6>
+                      </div>
+                      <div
+                        class="
+                          modal___product__order
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <h6 class="billing__sec__heading pb-3">Watch</h6>
+                        <h6 class="billing__sec__heading pb-3">$100.00</h6>
+                      </div>
+                    </div>
+
+                    <hr class="my-3" />
+                    <div class="modal__shipping">
+                      <div
+                        class="
+                          modal__shipping__details
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <h4 class="billing__main__heading pb-3">Shipping</h4>
+                        <h4 class="pb-3">Free</h4>
+                      </div>
+                      <div
+                        class="
+                          modal__shipping__details
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <h4 class="billing__main__heading pb-3">Total</h4>
+                        <h4 class="billing__main__heading pb-3">$169.00</h4>
+                      </div>
+                    </div>
+                    <hr class="my-3" />
+                    <div class="form-check">
+                      <input
+                        id="cod"
+                        name="paymentMethod"
+                        type="radio"
+                        class="form-check-input"
+                        checked
+                        required
+                      />
+                      <label
+                        class="form-check-label billing__sec__heading pb-3"
+                        for="cod"
+                        >Cash on delivery</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        id="credt"
+                        name="paymentMethod"
+                        type="radio"
+                        class="form-check-input"
+                        required
+                      />
+                      <label
+                        class="form-check-label billing__sec__heading pb-3"
+                        for="credit"
+                        >Credit Card</label
+                      >
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn-modal mx-auto"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <div class="card" style="width: 372px">
+            <div class="card-body">
+              <h5 class="card-title mb-4 cart___detailsbox">Cart Total</h5>
+              <div class="d-flex justify-content-between">
+                <h6 class="card-subtitle">Number of items</h6>
+                <h6>2</h6>
+              </div>
+              <div class="d-flex justify-content-between mb-2 mt-4">
+                <h6 class="card-subtitle">Total</h6>
+                <h6>$2000.00</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
